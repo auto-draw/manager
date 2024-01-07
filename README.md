@@ -1,2 +1,2 @@
 # manager
-The manager for Auto-Draw
+The update manager for Auto-Draw
