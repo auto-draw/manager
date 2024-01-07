@@ -1,0 +1,67 @@
+<Window x:Class="AutodrawInstaller.MainWindow"
+        xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        mc:Ignorable="d" d:DesignWidth="728" d:DesignHeight="450"
+        x:Name="AutoDrawInstaller"
+        
+        Width="720"
+        Height="420"
+        CanResize="True"
+        DragDrop.AllowDrop="False"
+
+        MinWidth="720"
+        MinHeight="420"
+        WindowStartupLocation="CenterScreen"
+        
+        Title="AutoDraw Installer"
+
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        ExtendClientAreaTitleBarHeightHint="20">
+    
+    <Grid RowDefinitions="20,1*" Background="#9555">
+        <!--Toolbar-->
+        <Canvas Grid.Row="0" Background="#222" Width="{Binding $parent[Window].Bounds.Width}" Height="20">
+            <!--Background-->
+            <Canvas Width="{Binding $parent[Window].Bounds.Width}" Height="20" />
+
+            <!--Buttons-->
+            <Grid Name="ToolbarButtons" Width="{Binding $parent[Window].Bounds.Width}"
+                  ColumnDefinitions="*,20,20,20">
+                <Button Name="MinimizeAppButton" Grid.Column="2" Width="20"
+                        Height="20" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                        Padding="0">
+                    -
+                </Button>
+                <Button Name="CloseAppButton" Grid.Column="3" Width="20" Height="20"
+                        FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0">
+                    X
+                </Button>
+            </Grid>
+        </Canvas>
+        <Grid Grid.Row="1" Name="Body" Margin="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <!-- A label with the app name and version -->
+            <Label Name="Title" Grid.Row="1" Margin="0" FontSize="48" Height="100" HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center" Content="Welcome to AutoDraw"/>
+            <!-- A button to install the app -->
+            <Button Grid.Row="2" Name="InstallButton" Content="Install v2.1" Margin="0,50,0,0"
+                    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" HorizontalContentAlignment="Center" Width="200" Height="40"/>
+            <Button Grid.Row="4" IsVisible="False" Name="UpdateButton" Content="Update" Margin="0,50,0,0"
+                    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" HorizontalContentAlignment="Center" Width="200" Height="40"/>
+            <Button Grid.Row="6" IsVisible="False" Name="UninstallButton" Content="Uninstall" Margin="0,50,0,0"
+                    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" HorizontalContentAlignment="Center" Width="200" Height="40"/>
+        </Grid>
+    </Grid>
+</Window>
