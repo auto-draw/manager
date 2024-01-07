@@ -138,13 +138,18 @@ public partial class MainWindow : Window
     {
         // Get the path of the current executable
         string exePath = Process.GetCurrentProcess().MainModule.FileName;
-
         // Create a new process start info
+        string arg = "";
+        if (Environment.GetCommandLineArgs().Contains("/S"))
+        {
+            arg = "/S";
+        }
         ProcessStartInfo startInfo = new ProcessStartInfo
         {
             FileName = exePath,
             Verb = "runas",  
             UseShellExecute = true,
+            Arguments = arg
         };
 
         try
