@@ -1,3 +1,7 @@
+using System;
+using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
@@ -17,7 +21,7 @@ public partial class App : Application
         {
             desktop.MainWindow = new MainWindow();
         }
-
+        
         base.OnFrameworkInitializationCompleted();
     }
 }

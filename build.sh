@@ -1,0 +1,2 @@
+﻿dotnet publish AutodrawInstaller.csproj -r win-x64 -c Release -p:publishsinglefile=true --self-contained true -p:debugsymbols=false -p:debugtype=none -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishTrimmed=true -o Builds/AutodrawInstaller-win-x64-$buildExtension/Autodraw
+pause
